@@ -2,6 +2,4 @@
 
 Super easy and programmable custom fields for Wordpress.
 
----
-
-**Plugin in development**
+<sub>**Please note:** Plugin in development</sub>
