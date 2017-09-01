@@ -8,8 +8,6 @@ class Helpers
 {
     function __construct()
     {
-        // Actions
-        add_action('ef/helpers/deny_if_not_admin', array($this, 'deny_if_not_admin'));
     }
 
     /**
@@ -17,7 +15,7 @@ class Helpers
      * 
      * @return void
      */
-    public function deny_if_not_admin() 
+    public static function deny_if_not_admin() 
     {
         if (! current_user_can('manage_options')) {
             wp_die( __( 'You do not have sufficient permissions to access this page.' ) );

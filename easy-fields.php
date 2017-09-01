@@ -37,7 +37,7 @@ class Plugin
 		// Includes 
 		$this->include_before_theme();
 	}
-
+	
 	/**
 	 * Activate the plugin
 	 */
@@ -55,11 +55,16 @@ class Plugin
 	}
 
 	public function include_before_theme() 
-	{
+	{	
+		// Api
 		require_once(sprintf('%s/core/api.php', EF_DIR));
 
+		// Controllers
+		require_once(sprintf('%s/core/controllers/field.php', EF_DIR));
 		require_once(sprintf('%s/core/controllers/helpers.php', EF_DIR));
+		require_once(sprintf('%s/core/controllers/scanner.php', EF_DIR));
 
+		// Admin
 		if (is_admin()) {
 			require_once(sprintf('%s/core/controllers/admin.php', EF_DIR));
 		}

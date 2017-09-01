@@ -3,6 +3,9 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "/Users/kasper/web/easy-fields-wp/site/web/app/themes/ef"
 		}
 	]
 }
