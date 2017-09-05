@@ -7,5 +7,13 @@
 		{
 			"path": "/Users/kasper/web/easy-fields-wp/site/web/app/themes/ef"
 		}
-	]
+	],
+    "settings": {
+        "xdebug": {
+            "url": "http://ef.dev/",
+            "path_mapping": {
+                "/srv/www/ef.com/current/web" : "/Users/kasper/web/easy-fields-wp/site/web"
+            }
+        }
+    }
 }
