@@ -62,6 +62,7 @@ class Plugin
 		// Controllers
 		require_once(sprintf('%s/core/controllers/field.php', EF_DIR));
 		require_once(sprintf('%s/core/controllers/helpers.php', EF_DIR));
+		require_once(sprintf('%s/core/controllers/reader.php', EF_DIR));
 		require_once(sprintf('%s/core/controllers/scanner.php', EF_DIR));
 
 		// Admin

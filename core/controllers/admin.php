@@ -14,7 +14,6 @@ class Admin
         add_action('add_meta_boxes', array($this, 'admin_meta_boxes'));
     }
 
-
     /**
      * Register settings page
      * 
@@ -65,7 +64,9 @@ class Admin
     public function load_meta_box_view() 
     {
         $url = get_the_permalink();
-        $data = Scanner::find_templates_used($url);
+        $template_urls = Scanner::find_templates_used($url);
+        $fields = Reader::find_fields($template_urls);
+        $data = $fields;
 
         require_once(sprintf('%s/core/views/meta_box.php', EF_DIR));
     }

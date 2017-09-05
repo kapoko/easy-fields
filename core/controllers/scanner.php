@@ -31,9 +31,7 @@ class Scanner
     }
 
     /**
-     * Takes a post or page ID en finds the templates used. Mocks
-     * a post loop to find out which template Wordpress would call
-     * on the front end.   
+     * Takes a link to a post or page en finds the templates used. 
      * 
      * @param  int      $id     Post or page ID
      * @return array            Array containing filenames of used templates
@@ -44,7 +42,7 @@ class Scanner
 
         $main_template_path = self::get_meta_tag($url_with_parameter, 'easy-fields-template-scanner');
 
-        return $main_template_path;
+        return array($main_template_path);
     }
 
     /**
@@ -59,7 +57,11 @@ class Scanner
         $html = self::file_get_contents_curl($url);
 
         $doc = new \DOMDocument();
+
+        // loadHTML() gives a warning for HTML5 pages, surpress it
+        libxml_use_internal_errors(true);
         @$doc->loadHTML($html);
+        libxml_use_internal_errors(false);
 
         $metas = $doc->getElementsByTagName('meta');
 
